@@ -263,7 +263,7 @@ export const FeedSimulatorModal: React.FC<FeedSimulatorModalProps> = ({
                   </div>
 
                   <div className="mt-3 flex items-start gap-3 px-1">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-xs shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xs shrink-0 shadow-[0_0_10px_rgba(37,99,235,0.4)]">
                       IT
                     </div>
                     <div className="flex-1">
@@ -354,7 +354,7 @@ export const FeedSimulatorModal: React.FC<FeedSimulatorModalProps> = ({
                       {currentThumb.views} • 3 days ago
                     </p>
                     <div className="flex items-center gap-2 mt-2">
-                      <div className="w-6 h-6 rounded-full bg-cyan-600 flex items-center justify-center text-[10px] font-bold">
+                      <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold shadow-[0_0_8px_rgba(37,99,235,0.5)]">
                         IT
                       </div>
                       <span className="text-xs text-neutral-300">{currentThumb.client}</span>
@@ -380,7 +380,7 @@ export const FeedSimulatorModal: React.FC<FeedSimulatorModalProps> = ({
         {/* Modal Footer */}
         <div className="px-5 py-3 border-t border-slate-800 bg-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-400">
           <div>
-            Applied tactics: <span className="text-cyan-300 font-medium">{currentThumb.keyTactics.join(' · ')}</span>
+            Applied tactics: <span className="text-blue-300 font-medium">{currentThumb.keyTactics.join(' · ')}</span>
           </div>
           <button
             onClick={onClose}

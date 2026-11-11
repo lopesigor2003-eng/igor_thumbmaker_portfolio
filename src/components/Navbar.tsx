@@ -19,17 +19,17 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Zone 1: Monogram brand mark */}
         <button
           onClick={() => onNavigate('hero')}
-          className="flex items-center gap-2.5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg p-1 cursor-pointer"
+          className="flex items-center gap-2.5 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg p-1 cursor-pointer"
           aria-label="Igor Thumbnail Maker - Home"
         >
-          {/* Neon blue monogram logo */}
-          <div className="w-9 h-9 rounded-lg bg-neutral-900 border border-cyan-500/40 flex items-center justify-center shadow-lg group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(0,240,255,0.35)] transition-all">
-            <span className="font-['Big_Shoulders_Display'] text-xl font-black tracking-tight text-cyan-400">
+          {/* Deep royal neon blue monogram logo */}
+          <div className="w-9 h-9 rounded-lg bg-neutral-900 border border-blue-500/50 flex items-center justify-center shadow-lg group-hover:border-blue-400 group-hover:shadow-[0_0_15px_rgba(37,99,235,0.5)] transition-all">
+            <span className="font-['Big_Shoulders_Display'] text-xl font-black tracking-tight text-blue-400">
               IT
             </span>
           </div>
           <div className="hidden sm:block">
-            <span className="font-['Big_Shoulders_Display'] text-lg font-bold tracking-wider uppercase text-white group-hover:text-cyan-300 transition-colors block leading-tight">
+            <span className="font-['Big_Shoulders_Display'] text-lg font-bold tracking-wider uppercase text-white group-hover:text-blue-400 transition-colors block leading-tight">
               Igor
             </span>
             <span className="text-[10px] uppercase tracking-widest text-neutral-400 font-medium block">
@@ -44,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => onNavigate('hero')}
             className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
               activeSection === 'hero'
-                ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-extrabold shadow-[0_0_15px_rgba(0,240,255,0.4)]'
+                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold shadow-[0_0_15px_rgba(37,99,235,0.5)]'
                 : 'hover:text-white hover:bg-neutral-800'
             }`}
           >
@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => onNavigate('about')}
             className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
               activeSection === 'about'
-                ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-extrabold shadow-[0_0_15px_rgba(0,240,255,0.4)]'
+                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold shadow-[0_0_15px_rgba(37,99,235,0.5)]'
                 : 'hover:text-white hover:bg-neutral-800'
             }`}
           >
@@ -66,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => onNavigate('projects')}
             className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
               activeSection === 'projects'
-                ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-extrabold shadow-[0_0_15px_rgba(0,240,255,0.4)]'
+                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold shadow-[0_0_15px_rgba(37,99,235,0.5)]'
                 : 'hover:text-white hover:bg-neutral-800'
             }`}
           >
@@ -75,10 +75,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={onOpenFeedSimulator}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-neutral-300 hover:text-cyan-300 hover:bg-neutral-800 transition-all whitespace-nowrap shrink-0 border border-neutral-700 hover:border-cyan-500/50 cursor-pointer"
+            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-neutral-300 hover:text-blue-300 hover:bg-neutral-800 transition-all whitespace-nowrap shrink-0 border border-neutral-700 hover:border-blue-500/50 cursor-pointer"
             title="Preview in YouTube Feed Simulator"
           >
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <Sparkles className="w-3.5 h-3.5 text-blue-400" />
             <span>Feed Simulator</span>
           </button>
 
@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => onNavigate('contact')}
             className={`px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap shrink-0 cursor-pointer ${
               activeSection === 'contact'
-                ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-black font-extrabold shadow-[0_0_15px_rgba(0,240,255,0.4)]'
+                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-extrabold shadow-[0_0_15px_rgba(37,99,235,0.5)]'
                 : 'hover:text-white hover:bg-neutral-800'
             }`}
           >
@@ -94,13 +94,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </nav>
 
-        {/* Zone 3: 1 Primary Action (Neon blue glow button) */}
+        {/* Zone 3: 1 Primary Action (Deep royal neon blue glow button) */}
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => onNavigate('contact')}
-            className="flex items-center gap-1.5 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 rounded-lg shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 whitespace-nowrap shrink-0 cursor-pointer"
+            className="flex items-center gap-1.5 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 rounded-lg shadow-[0_0_20px_rgba(37,99,235,0.5)] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 whitespace-nowrap shrink-0 cursor-pointer"
           >
-            <MessageSquare className="w-3.5 h-3.5 text-black" />
+            <MessageSquare className="w-3.5 h-3.5 text-white" />
             <span>Get a Quote</span>
           </button>
         </div>

@@ -18,11 +18,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
         {/* Section Header */}
         <div className="text-center md:text-left mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-800/80 pb-6">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 block mb-1">
+            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-1">
               Professional Profile · Gaming Niche Specialist
             </span>
             <h2 className="font-['Big_Shoulders_Display'] text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white">
-              ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 drop-shadow-[0_0_25px_rgba(0,240,255,0.6)]">ME</span>
+              ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600 drop-shadow-[0_0_25px_rgba(37,99,235,0.65)]">ME</span>
             </h2>
           </div>
           <div className="text-sm text-neutral-400 max-w-md">
@@ -36,17 +36,17 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
           {/* Left Column: Creator Cutout & Personal Badge */}
           <div className="lg:col-span-5 flex flex-col items-center">
             
-            <div className="relative w-full max-w-[340px] sm:max-w-[380px] rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-cyan-400/60 p-5 shadow-2xl overflow-hidden group transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,240,255,0.2)]">
+            <div className="relative w-full max-w-[340px] sm:max-w-[380px] rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500/60 p-5 shadow-2xl overflow-hidden group transition-all duration-300 hover:shadow-[0_0_35px_rgba(37,99,235,0.25)]">
               
               {/* Backglow behind silhouette */}
-              <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-48 h-48 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-48 h-48 bg-blue-600/25 rounded-full blur-3xl pointer-events-none" />
               
               <div className="text-center mb-4">
                 <span className="text-xs uppercase tracking-widest text-neutral-400 font-semibold block">
                   HELLO, I AM
                 </span>
                 <span className="font-['Big_Shoulders_Display'] text-3xl font-extrabold text-white tracking-wide block">
-                  IGOR <span className="text-cyan-400">THUMBNAIL MAKER</span>
+                  IGOR <span className="text-blue-400">THUMBNAIL MAKER</span>
                 </span>
               </div>
 
@@ -63,7 +63,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-85" />
                 
                 <div className="absolute bottom-3 inset-x-3 text-center">
-                  <span className="text-[11px] font-mono text-cyan-300 bg-neutral-900/90 px-2.5 py-1 rounded-md border border-cyan-500/50 backdrop-blur-sm shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+                  <span className="text-[11px] font-mono text-blue-300 bg-neutral-900/90 px-2.5 py-1 rounded-md border border-blue-500/50 backdrop-blur-sm shadow-[0_0_10px_rgba(37,99,235,0.3)]">
                     2+ Years Focused on Gaming Niche
                   </span>
                 </div>
@@ -78,12 +78,12 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
 
             {/* Quick Principles Badges */}
             <div className="w-full max-w-[340px] sm:max-w-[380px] grid grid-cols-2 gap-2 mt-4">
-              <div className="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 text-center hover:border-cyan-500/40 transition-colors">
-                <span className="font-['Big_Shoulders_Display'] text-2xl font-bold text-cyan-400 block drop-shadow-[0_0_12px_rgba(0,240,255,0.5)]">0.8s</span>
+              <div className="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 text-center hover:border-blue-500/40 transition-colors">
+                <span className="font-['Big_Shoulders_Display'] text-2xl font-bold text-blue-400 block drop-shadow-[0_0_12px_rgba(37,99,235,0.6)]">0.8s</span>
                 <span className="text-[11px] text-neutral-400 font-medium">Decision time in feed</span>
               </div>
-              <div className="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 text-center hover:border-cyan-500/40 transition-colors">
-                <span className="font-['Big_Shoulders_Display'] text-2xl font-bold text-cyan-400 block drop-shadow-[0_0_12px_rgba(0,240,255,0.5)]">85%</span>
+              <div className="p-3 rounded-xl bg-neutral-900/60 border border-neutral-800 text-center hover:border-blue-500/40 transition-colors">
+                <span className="font-['Big_Shoulders_Display'] text-2xl font-bold text-blue-400 block drop-shadow-[0_0_12px_rgba(37,99,235,0.6)]">85%</span>
                 <span className="text-[11px] text-neutral-400 font-medium">Mobile viewers</span>
               </div>
             </div>
@@ -95,7 +95,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
             
             {/* About Me Text Card (Clean without bullet clutter) */}
             <div className="p-6 rounded-2xl bg-neutral-900/40 border border-neutral-800 hover:border-neutral-700 transition-colors">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">
                 ABOUT ME
               </h3>
               <p className="text-base text-neutral-200 leading-relaxed font-normal">
@@ -104,9 +104,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
             </div>
 
             {/* Gaming Focus Card */}
-            <div className="p-6 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-cyan-500/40 transition-all hover:shadow-[0_0_25px_rgba(0,240,255,0.15)]">
+            <div className="p-6 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500/50 transition-all hover:shadow-[0_0_25px_rgba(37,99,235,0.2)]">
               <div className="flex items-center gap-2 mb-3">
-                <Gamepad2 className="w-5 h-5 text-cyan-400" />
+                <Gamepad2 className="w-5 h-5 text-blue-400" />
                 <h3 className="font-['Big_Shoulders_Display'] text-2xl font-extrabold uppercase tracking-wide text-white">
                   SPECIALIST IN YOUTUBE'S BIGGEST GAMES
                 </h3>
@@ -116,20 +116,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
               </p>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-4 border-t border-neutral-800/80 text-center">
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-cyan-400/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-cyan-300 block">GTA 5</span>
+                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
+                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">GTA 5</span>
                   <span className="text-[10px] text-neutral-400">Chases & Roleplay</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-cyan-400/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-cyan-300 block">GTA 6</span>
+                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
+                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">GTA 6</span>
                   <span className="text-[10px] text-neutral-400">Vice City & Hype</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-cyan-400/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-cyan-300 block">CS:GO / CS2</span>
+                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
+                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">CS:GO / CS2</span>
                   <span className="text-[10px] text-neutral-400">Clutches & Esports</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-cyan-400/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-cyan-300 block">ROBLOX</span>
+                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
+                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">ROBLOX</span>
                   <span className="text-[10px] text-neutral-400">Obby & Challenges</span>
                 </div>
               </div>
@@ -138,8 +138,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
             {/* Experience & Education columns */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
-              <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-cyan-500/30 transition-colors">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">
+              <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-blue-500/40 transition-colors">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">
                   HANDS-ON EXPERIENCE
                 </h4>
                 <div className="space-y-2 text-xs text-neutral-300">
@@ -150,8 +150,8 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-cyan-500/30 transition-colors">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-2">
+              <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-blue-500/40 transition-colors">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">
                   HIGH-CTR METHODOLOGY
                 </h4>
                 <div className="space-y-2 text-xs text-neutral-300">

@@ -36,16 +36,16 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 border-b border-neutral-800/80 pb-6">
           <div>
-            <span className="text-xs font-bold uppercase tracking-widest text-cyan-400 block mb-1">
+            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-1">
               Work Gallery · Real Cases
             </span>
             <h2 className="font-['Big_Shoulders_Display'] text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white">
-              RECAP PROJECT <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 drop-shadow-[0_0_25px_rgba(0,240,255,0.6)]">2026</span>
+              RECAP PROJECT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600 drop-shadow-[0_0_25px_rgba(37,99,235,0.65)]">2026</span>
             </h2>
           </div>
         </div>
 
-        {/* Category Filter Tabs (Electric Neon Blue & Carbon Segmented Buttons) */}
+        {/* Category Filter Tabs (Deep Royal Neon Blue & Carbon Segmented Buttons) */}
         <div className="flex items-center gap-2 overflow-x-auto pb-3 mb-8 no-scrollbar">
           {CATEGORY_TABS.map((tab) => {
             const isActive = activeCategory === tab.id;
@@ -55,8 +55,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
                 onClick={() => setActiveCategory(tab.id)}
                 className={`px-4 py-2 text-xs font-semibold rounded-xl transition-all whitespace-nowrap shrink-0 border cursor-pointer ${
                   isActive
-                    ? 'bg-gradient-to-r from-cyan-400 to-blue-500 border-cyan-400 text-black font-black shadow-[0_0_20px_rgba(0,240,255,0.45)]'
-                    : 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-cyan-300 hover:border-cyan-500/40'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 border-blue-500 text-white font-black shadow-[0_0_20px_rgba(37,99,235,0.5)]'
+                    : 'bg-neutral-900 border-neutral-800 text-neutral-300 hover:text-blue-300 hover:border-blue-500/50'
                 }`}
               >
                 {tab.label}
@@ -71,7 +71,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
             <div
               key={thumb.id}
               onClick={() => onSelectThumbnail(thumb)}
-              className="group relative rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-cyan-400 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,240,255,0.35)] cursor-pointer"
+              className="group relative rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] cursor-pointer"
               title="Click to view details"
             >
               {/* Thumbnail 16:9 Container - Strictly the photo */}
@@ -93,19 +93,19 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
 
                 {/* Resilient fallback if image fails */}
                 <div className="thumb-fallback hidden absolute inset-0 bg-neutral-950 flex-col items-center justify-center p-4 text-center">
-                  <Layers className="w-8 h-8 text-cyan-400 mb-2" />
+                  <Layers className="w-8 h-8 text-blue-400 mb-2" />
                   <span className="text-xs text-neutral-400">{thumb.categoryLabel}</span>
                 </div>
 
-                {/* Subtle electric blue glow overlay on hover */}
-                <div className="absolute inset-0 bg-cyan-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                {/* Subtle deep blue glow overlay on hover */}
+                <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom banner for creators with Neon Blue Accent */}
-        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-cyan-500/40 flex flex-col md:flex-row items-center justify-between gap-6 transition-all hover:shadow-[0_0_25px_rgba(0,240,255,0.15)]">
+        {/* Bottom banner for creators with Deep Royal Neon Blue Accent */}
+        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500/50 flex flex-col md:flex-row items-center justify-between gap-6 transition-all hover:shadow-[0_0_25px_rgba(37,99,235,0.2)]">
           <div className="space-y-1 text-center md:text-left">
             <h4 className="font-['Big_Shoulders_Display'] text-2xl sm:text-3xl font-extrabold uppercase text-white">
               Need a custom high-CTR thumbnail for your next video?
@@ -119,7 +119,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               const el = document.getElementById('contact');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-300 hover:to-blue-400 text-black font-black text-xs uppercase tracking-wider shadow-[0_0_25px_rgba(0,240,255,0.45)] transition-all shrink-0 cursor-pointer"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-black text-xs uppercase tracking-wider shadow-[0_0_25px_rgba(37,99,235,0.55)] transition-all shrink-0 cursor-pointer"
           >
             Get a Quote Now
           </button>

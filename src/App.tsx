@@ -23,9 +23,7 @@ export default function App() {
       const saved = localStorage.getItem('igor_portfolio_profile');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (!parsed.avatarUrl || parsed.avatarUrl.includes('avatar_designer_hero')) {
-          parsed.avatarUrl = INITIAL_USER_PROFILE.avatarUrl;
-        }
+        parsed.avatarUrl = INITIAL_USER_PROFILE.avatarUrl;
         parsed.role = INITIAL_USER_PROFILE.role;
         parsed.tagline = INITIAL_USER_PROFILE.tagline;
         parsed.whatsapp = INITIAL_USER_PROFILE.whatsapp;

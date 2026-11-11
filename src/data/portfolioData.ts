@@ -6,7 +6,7 @@ export const INITIAL_USER_PROFILE: UserProfileData = {
   tagline: 'Magnetic YouTube thumbnails that turn impressions into millions of clicks.',
   experienceYears: 2,
   bio: 'Creating designs for the past 2 years that make people scrolling stop in their tracks. Every thumbnail is engineered to beat competition on the homepage - and win the click.',
-  avatarUrl: '/assets/aistudio/Gemini_Generated_Image_47bd9b16.jpeg',
+  avatarUrl: '/assets/aistudio/Retrato_Neon_em_Est_dio_Criativo_8d8c9e58.png',
   email: 'lopes.igor2003@gmail.com',
   whatsapp: '55996649651',
   discord: 'igorthumbnailmaker',
