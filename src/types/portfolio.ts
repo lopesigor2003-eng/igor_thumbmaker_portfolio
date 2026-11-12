@@ -2,8 +2,10 @@ export type ThumbnailCategory =
   | 'todos'
   | 'gta5'
   | 'gta6'
-  | 'csgo'
-  | 'roblox';
+  | 'roblox'
+  | 'terror'
+  | 'viagem'
+  | 'vlogs';
 
 export interface ThumbnailProject {
   id: string;

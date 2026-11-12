@@ -19,14 +19,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
         <div className="text-center md:text-left mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-800/80 pb-6">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-1">
-              Professional Profile · Gaming Niche Specialist
+              Professional Profile · High-CTR Multi-Niche Specialist
             </span>
             <h2 className="font-['Big_Shoulders_Display'] text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white">
               ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600 drop-shadow-[0_0_25px_rgba(37,99,235,0.65)]">ME</span>
             </h2>
           </div>
           <div className="text-sm text-neutral-400 max-w-md">
-            Specialized in creating high-impact thumbnails that dominate the feeds of YouTube’s biggest games: GTA, CS, and Roblox.
+            Specialized in creating high-impact thumbnails that command the feed across YouTube’s biggest niches: GTA, Roblox, Horror, Travel, and Vlogs.
           </div>
         </div>
 
@@ -64,14 +64,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                 
                 <div className="absolute bottom-3 inset-x-3 text-center">
                   <span className="text-[11px] font-mono text-blue-300 bg-neutral-900/90 px-2.5 py-1 rounded-md border border-blue-500/50 backdrop-blur-sm shadow-[0_0_10px_rgba(37,99,235,0.3)]">
-                    2+ Years Focused on Gaming Niche
+                    2+ Years Delivering Viral Thumbnails
                   </span>
                 </div>
               </div>
 
               {/* Bio summary */}
               <p className="mt-4 text-xs text-neutral-300 text-center leading-relaxed">
-                Specialist in capturing clicks within fractions of a second. Turning regular gameplay videos into view magnets.
+                Specialist in capturing clicks within fractions of a second. Turning regular video ideas into irresistible homepage click magnets.
               </p>
 
             </div>
@@ -90,10 +90,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
 
           </div>
 
-          {/* Right Column: Bio & Gaming Specialization */}
+          {/* Right Column: Bio & Multi-Niche Specialization */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* About Me Text Card (Clean without bullet clutter) */}
+            {/* About Me Text Card */}
             <div className="p-6 rounded-2xl bg-neutral-900/40 border border-neutral-800 hover:border-neutral-700 transition-colors">
               <h3 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">
                 ABOUT ME
@@ -103,19 +103,19 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
               </p>
             </div>
 
-            {/* Gaming Focus Card */}
+            {/* Niches Focus Card (6 niches: GTA 5, GTA 6, Roblox, Terror, Viagem, Vlogs) */}
             <div className="p-6 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500/50 transition-all hover:shadow-[0_0_25px_rgba(37,99,235,0.2)]">
               <div className="flex items-center gap-2 mb-3">
-                <Gamepad2 className="w-5 h-5 text-blue-400" />
+                <Sparkles className="w-5 h-5 text-blue-400" />
                 <h3 className="font-['Big_Shoulders_Display'] text-2xl font-extrabold uppercase tracking-wide text-white">
-                  SPECIALIST IN YOUTUBE'S BIGGEST GAMES
+                  CORE NICHES & PSYCHOLOGICAL STRATEGIES
                 </h3>
               </div>
               <p className="text-xs text-neutral-300 leading-relaxed">
-                Gameplay thumbnails require strict visual rules: speed, imminent danger, colors that pop against YouTube’s dark background, and bold typography readable even on mobile screens. My job is to ensure your video is the viewer's first choice.
+                Each genre requires dedicated psychological triggers: cinematic speed and chase tension in GTA, vibrant saturation in Roblox, spine-chilling suspense in Terror, aspirational grandeur in Viagem, and raw emotional resonance in Vlogs.
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-4 border-t border-neutral-800/80 text-center">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4 pt-4 border-t border-neutral-800/80 text-center">
                 <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
                   <span className="font-bold text-xs text-white group-hover:text-blue-300 block">GTA 5</span>
                   <span className="text-[10px] text-neutral-400">Chases & Roleplay</span>
@@ -125,12 +125,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                   <span className="text-[10px] text-neutral-400">Vice City & Hype</span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">CS:GO / CS2</span>
-                  <span className="text-[10px] text-neutral-400">Clutches & Esports</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
                   <span className="font-bold text-xs text-white group-hover:text-blue-300 block">ROBLOX</span>
                   <span className="text-[10px] text-neutral-400">Obby & Challenges</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
+                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">TERROR / HORROR</span>
+                  <span className="text-[10px] text-neutral-400">Suspense & Mystery</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
+                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">VIAGEM / TRAVEL</span>
+                  <span className="text-[10px] text-neutral-400">Cinematic Wonders</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
+                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">VLOGS / LIFESTYLE</span>
+                  <span className="text-[10px] text-neutral-400">Emotion & Hooks</span>
                 </div>
               </div>
             </div>

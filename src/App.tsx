@@ -44,18 +44,11 @@ export default function App() {
       if (saved) {
         const parsed = JSON.parse(saved);
         if (
-          Array.isArray(parsed) &&
-          parsed.some(
-            (t: any) =>
-              t.category === 'gaming' ||
-              t.category === 'storytelling' ||
-              t.category === 'podcasts' ||
-              t.category === 'tech' ||
-              t.category === 'ab_test' ||
-              t.id?.startsWith('thumb-1') ||
-              t.id?.startsWith('thumb-2') ||
-              t.id?.startsWith('thumb-3')
-          )
+          !Array.isArray(parsed) ||
+          parsed.length !== INITIAL_THUMBNAILS.length ||
+          !parsed.some((t: any) => t.category === 'terror') ||
+          !parsed.some((t: any) => t.category === 'viagem') ||
+          !parsed.some((t: any) => t.category === 'vlogs')
         ) {
           localStorage.setItem('igor_portfolio_thumbnails', JSON.stringify(INITIAL_THUMBNAILS));
           return INITIAL_THUMBNAILS;
@@ -171,10 +164,12 @@ export default function App() {
         selectedThumbnail={selectedThumbForSimulator}
       />
 
-      {/* Thumbnail Details & Strategy Modal */}
+      {/* Thumbnail Fullscreen Zoom Lightbox */}
       <ThumbnailDetailModal
         thumbnail={selectedThumbForDetail}
+        thumbnails={thumbnails}
         onClose={() => setSelectedThumbForDetail(null)}
+        onSelectThumbnail={(thumb) => setSelectedThumbForDetail(thumb)}
         onOpenFeedSimulator={(thumb) => handleOpenFeedSimulator(thumb)}
       />
 

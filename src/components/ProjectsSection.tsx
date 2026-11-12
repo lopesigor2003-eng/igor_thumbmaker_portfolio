@@ -11,11 +11,13 @@ interface ProjectsSectionProps {
 }
 
 const CATEGORY_TABS: { id: ThumbnailCategory; label: string }[] = [
-  { id: 'todos', label: 'All Games' },
+  { id: 'todos', label: 'All Projects (6)' },
   { id: 'gta5', label: 'GTA 5' },
   { id: 'gta6', label: 'GTA 6' },
-  { id: 'csgo', label: 'CS:GO / CS2' },
   { id: 'roblox', label: 'Roblox' },
+  { id: 'terror', label: 'Terror' },
+  { id: 'viagem', label: 'Viagem' },
+  { id: 'vlogs', label: 'Vlogs' },
 ];
 
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
@@ -72,7 +74,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
               key={thumb.id}
               onClick={() => onSelectThumbnail(thumb)}
               className="group relative rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] cursor-pointer"
-              title="Click to view details"
+              title="Click to open in fullscreen zoom"
             >
               {/* Thumbnail 16:9 Container - Strictly the photo */}
               <div className="relative aspect-video w-full overflow-hidden bg-black">
