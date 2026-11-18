@@ -10,56 +10,11 @@ import {
   ExternalLink,
   ShieldCheck,
   Sparkles,
-  Star,
-  CheckCircle2,
-  Quote,
 } from 'lucide-react';
 
 interface ContactSectionProps {
   profile: UserProfileData;
 }
-
-const CREATOR_TESTIMONIALS = [
-  {
-    id: 'roblox-review',
-    creatorName: 'Lucas "MaxPlay"',
-    channelName: 'MaxPlay Roblox',
-    subs: '1.4M Subscribers',
-    game: 'Roblox',
-    metric: '+132% CTR',
-    metricLabel: 'Jump vs channel average',
-    avatarLetter: 'M',
-    avatarBg: 'bg-gradient-to-tr from-fuchsia-600 to-rose-500',
-    quote:
-      'Igor completely transformed our channel\'s CTR. Our lava escape video jumped from our usual 7.2% to an insane 16.7% CTR in the first 24 hours. The vibrant saturation and exaggerated avatar expressions he creates literally dominate the mobile feed. Hands down the best thumbnail artist we’ve worked with.',
-  },
-  {
-    id: 'gta-review',
-    creatorName: 'Santos "RP"',
-    channelName: 'Santos Elite GTA',
-    subs: '890K Subscribers',
-    game: 'GTA 5',
-    metric: '1.8M Views',
-    metricLabel: 'Generated in first 3 days',
-    avatarLetter: 'S',
-    avatarBg: 'bg-gradient-to-tr from-amber-500 to-orange-600',
-    quote:
-      'In the GTA 5 niche, competition on the homepage is brutal. Igor’s use of volumetric lighting and cinematic smoke effects made our police chase video stand out instantly. We hit 1.8M views in just 3 days on a single upload. Super fast 24h turnaround and always delivers on point.',
-  },
-  {
-    id: 'csgo-review',
-    creatorName: 'Dmitri "Vortex"',
-    channelName: 'Vortex Clutch Esports',
-    subs: '620K Subscribers',
-    game: 'CS:GO / CS2',
-    metric: '15.8% CTR',
-    metricLabel: 'Sustained for 2+ weeks',
-    avatarLetter: 'V',
-    avatarBg: 'bg-gradient-to-tr from-blue-600 to-indigo-600',
-    quote:
-      'Finding a designer who truly understands competitive FPS storytelling is rare. Igor captured the exact high-stakes clutch moment with the AWP muzzle flash and clean silhouette rim lighting. The click-through rate stayed above 15% for over two weeks. Essential partner for any serious gaming creator.',
-  },
-];
 
 export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
   const [clientName, setClientName] = useState('');
@@ -99,84 +54,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
 
       <div className="max-w-7xl mx-auto w-full">
         
-        {/* Creator Testimonials / Social Proof Block (Roblox, GTA 5, CS:GO) */}
-        <div className="mb-20">
-          <div className="text-center mb-10 space-y-2">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 block">
-              Creator Testimonials · Proven Results
-            </span>
-            <h3 className="font-['Big_Shoulders_Display'] text-4xl sm:text-5xl font-black uppercase tracking-tight text-white">
-              WHAT TOP YOUTUBERS <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600 drop-shadow-[0_0_25px_rgba(37,99,235,0.65)]">SAY</span>
-            </h3>
-            <p className="text-xs sm:text-sm text-neutral-400 max-w-lg mx-auto">
-              Real feedback from gaming creators who leveled up their click-through rate, views, and channel growth.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {CREATOR_TESTIMONIALS.map((item) => (
-              <div
-                key={item.id}
-                className="relative rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500 p-6 flex flex-col justify-between transition-all duration-300 group hover:shadow-[0_0_30px_rgba(37,99,235,0.3)]"
-              >
-                {/* Decorative subtle ambient quote icon */}
-                <Quote className="absolute top-4 right-4 w-8 h-8 text-neutral-800/60 group-hover:text-blue-500/30 transition-colors pointer-events-none" />
-
-                <div>
-                  {/* Top: Star rating & Game Tag */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                      ))}
-                    </div>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-neutral-900 border border-neutral-800 text-blue-300">
-                      {item.game}
-                    </span>
-                  </div>
-
-                  {/* Quote text */}
-                  <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed italic mb-6">
-                    "{item.quote}"
-                  </p>
-                </div>
-
-                {/* Bottom: Creator Profile & Key Result Metric */}
-                <div className="pt-4 border-t border-neutral-900 space-y-3">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-10 h-10 rounded-full ${item.avatarBg} flex items-center justify-center text-white font-bold text-sm shadow-md`}>
-                        {item.avatarLetter}
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-1">
-                          <span className="text-xs font-bold text-white group-hover:text-blue-300 transition-colors">
-                            {item.channelName}
-                          </span>
-                          <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                        </div>
-                        <span className="text-[11px] text-neutral-400 block">
-                          {item.creatorName} · {item.subs}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Result Pill */}
-                  <div className="flex items-center justify-between p-2 rounded-lg bg-neutral-900/80 border border-blue-500/30 text-xs">
-                    <span className="font-['Big_Shoulders_Display'] text-base font-extrabold text-blue-400 tracking-wide">
-                      {item.metric}
-                    </span>
-                    <span className="text-[10px] text-neutral-400 font-medium">
-                      {item.metricLabel}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Section Header */}
         <div className="text-center mb-16 space-y-3">
           <span className="text-xs font-bold uppercase tracking-widest text-blue-400">
@@ -186,7 +63,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
             THANK <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600 drop-shadow-[0_0_25px_rgba(37,99,235,0.65)]">YOU</span>
           </h2>
           <p className="text-sm sm:text-base text-neutral-400 max-w-xl mx-auto">
-            Available for new projects, continuous monthly partnerships, and strategic high-CTR redesigns tailored to your channel.
+            Ready for my first opportunity on your channel—delivering custom thumbnails within 24 hours with 24/7 direct support.
           </p>
         </div>
 

@@ -4,8 +4,8 @@ export const INITIAL_USER_PROFILE: UserProfileData = {
   name: 'Igor',
   role: 'Thumbnail Maker & High-CTR Visual Designer',
   tagline: 'Magnetic YouTube thumbnails that turn impressions into millions of clicks.',
-  experienceYears: 2,
-  bio: 'Creating designs for the past 2 years that make people scrolling stop in their tracks. Every thumbnail is engineered to beat competition on the homepage - and win the click.',
+  experienceYears: 0,
+  bio: 'Dedicated to creating scroll-stopping thumbnail redesigns that make viewers pause mid-feed. Every concept is crafted to stand out on the YouTube homepage and earn the click—all I ask is one opportunity to prove it on your channel.',
   avatarUrl: '/assets/aistudio/Retrato_Neon_em_Est_dio_Criativo_8d8c9e58.png',
   email: 'lopes.igor2003@gmail.com',
   whatsapp: '55996649651',
@@ -65,10 +65,30 @@ export const SKILLS_DATA: SkillItem[] = [
 ];
 
 export const HIGHLIGHT_STATS = [
-  { label: 'Years in Market', value: '2+', description: 'Solid track record serving top YouTube creators' },
-  { label: 'Thumbnails Created', value: '+218', description: 'Exclusive focus on the gaming niche' },
-  { label: 'Average Turnaround', value: '24h', description: 'Fast delivery aligned with your upload schedule' },
-  { label: 'Channels Served', value: '50+', description: 'Creators and brands scaled on YouTube' },
+  {
+    value: '1 CHANCE',
+    label: 'Seeking an Opportunity',
+    description: 'Being completely honest: I am asking for an opportunity to design thumbnails for your channel and prove my value.',
+    targetSection: 'contact',
+  },
+  {
+    value: 'REDESIGNS',
+    label: 'See My Work Below',
+    description: 'Scroll down to the catalog to inspect the thumbnail redesigns I created across Gaming, Horror, Travel & Vlogs.',
+    targetSection: 'projects',
+  },
+  {
+    value: 'UP TO 24H',
+    label: 'Fast Thumbnail Delivery',
+    description: 'Dedicated turnaround with your custom thumbnail delivered in up to 24 hours so you never miss an upload.',
+    targetSection: undefined,
+  },
+  {
+    value: '24/7',
+    label: '24-Hour Support',
+    description: 'Round-the-clock direct communication for briefs, quick revisions, and adjustments whenever you need.',
+    targetSection: 'contact',
+  },
 ];
 
 export const INITIAL_THUMBNAILS: ThumbnailProject[] = [
@@ -78,6 +98,7 @@ export const INITIAL_THUMBNAILS: ThumbnailProject[] = [
     category: 'gta5',
     categoryLabel: 'GTA 5',
     imageUrl: '/assets/thumbnails/gta5.jpg',
+    beforeImageUrl: '/assets/aistudio/maxresdefault_f121a22a.jpg',
     ctr: '17.4%',
     views: '3.4M views',
     client: 'GTA 5 Community',
@@ -97,6 +118,7 @@ export const INITIAL_THUMBNAILS: ThumbnailProject[] = [
     category: 'gta6',
     categoryLabel: 'GTA 6',
     imageUrl: '/assets/thumbnails/gta6.jpg',
+    beforeImageUrl: '/assets/aistudio/1_3f194a88.jpg',
     ctr: '18.9%',
     views: '4.8M views',
     client: 'Vice City Gaming',
@@ -116,6 +138,7 @@ export const INITIAL_THUMBNAILS: ThumbnailProject[] = [
     category: 'roblox',
     categoryLabel: 'Roblox',
     imageUrl: '/assets/thumbnails/roblox.jpg',
+    beforeImageUrl: '/assets/thumbnails/roblox-before.jpg',
     ctr: '16.7%',
     views: '3.1M views',
     client: 'Roblox Universe',
@@ -135,6 +158,7 @@ export const INITIAL_THUMBNAILS: ThumbnailProject[] = [
     category: 'terror',
     categoryLabel: 'Terror',
     imageUrl: '/assets/thumbnails/terror.jpg',
+    beforeImageUrl: '/assets/thumbnails/terror-before.jpg',
     ctr: '18.2%',
     views: '2.9M views',
     client: 'Creepy Stories & Horror',
@@ -154,6 +178,7 @@ export const INITIAL_THUMBNAILS: ThumbnailProject[] = [
     category: 'viagem',
     categoryLabel: 'Viagem',
     imageUrl: '/assets/thumbnails/viagem.jpg',
+    beforeImageUrl: '/assets/thumbnails/viagem-before.jpg',
     ctr: '15.4%',
     views: '2.1M views',
     client: 'Wanderlust Expeditions',
@@ -173,6 +198,7 @@ export const INITIAL_THUMBNAILS: ThumbnailProject[] = [
     category: 'vlogs',
     categoryLabel: 'Vlog',
     imageUrl: '/assets/thumbnails/vlogs.jpg',
+    beforeImageUrl: '/assets/thumbnails/vlogs-before.jpg',
     ctr: '16.1%',
     views: '2.6M views',
     client: 'Creator Vlogs',

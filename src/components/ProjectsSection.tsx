@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThumbnailProject, ThumbnailCategory } from '../types/portfolio';
 import { filterThumbnails } from '../utils/portfolioCalculators';
 import { Layers } from 'lucide-react';
 
 interface ProjectsSectionProps {
   thumbnails: ThumbnailProject[];
-  onSelectThumbnail: (thumb: ThumbnailProject) => void;
+  onSelectThumbnail: (thumb: ThumbnailProject, viewMode?: 'before' | 'after') => void;
   onSimulateThumbnail: (thumb: ThumbnailProject) => void;
   onOpenCustomizer?: () => void;
 }
@@ -20,11 +20,139 @@ const CATEGORY_TABS: { id: ThumbnailCategory; label: string }[] = [
   { id: 'vlogs', label: 'Vlogs' },
 ];
 
+interface ThumbnailCardProps {
+  thumb: ThumbnailProject;
+  carouselPhase: 'before' | 'after';
+  onManualPhase: (e: React.MouseEvent, phase: 'before' | 'after') => void;
+  onSelect: (thumb: ThumbnailProject, viewMode?: 'before' | 'after') => void;
+}
+
+const ThumbnailCard: React.FC<ThumbnailCardProps> = ({
+  thumb,
+  carouselPhase,
+  onManualPhase,
+  onSelect,
+}) => {
+  const hasBeforeAfter = Boolean(thumb.beforeImageUrl);
+  const isBefore = hasBeforeAfter && carouselPhase === 'before';
+
+  return (
+    <div
+      onClick={() => onSelect(thumb, hasBeforeAfter ? carouselPhase : 'after')}
+      className="group relative rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] cursor-pointer"
+      title="Click to open in fullscreen zoom"
+    >
+      {/* Thumbnail 16:9 Container */}
+      <div className="relative aspect-video w-full overflow-hidden bg-black">
+        {hasBeforeAfter && thumb.beforeImageUrl ? (
+          <>
+            {/* Original ("Before") Slide — Starts active on load */}
+            <img
+              src={thumb.beforeImageUrl}
+              alt={`${thumb.title} - Before`}
+              referrerPolicy="no-referrer"
+              className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.03] ${
+                isBefore ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+              }`}
+            />
+
+            {/* Redesign ("After") Slide — Synced 3-second loop */}
+            <img
+              src={thumb.imageUrl}
+              alt={`${thumb.title} - After Redesign`}
+              referrerPolicy="no-referrer"
+              className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-[1.03] ${
+                !isBefore ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+              }`}
+            />
+
+            {/* Subtle Corner BEFORE / AFTER Indicator */}
+            <div className="absolute top-3 left-3 z-20 pointer-events-none">
+              <span
+                className={`inline-block px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest backdrop-blur-md border transition-all duration-500 ${
+                  isBefore
+                    ? 'bg-black/80 text-neutral-200 border-neutral-700/90'
+                    : 'bg-blue-950/90 text-blue-300 border-blue-500/70 shadow-[0_0_15px_rgba(37,99,235,0.5)]'
+                }`}
+              >
+                {isBefore ? 'Before' : 'After'}
+              </span>
+            </div>
+
+            {/* Synced Slide Dots in Bottom-Right Corner */}
+            <div className="absolute bottom-3 right-3 z-20 flex items-center gap-1.5 bg-black/75 border border-neutral-800/90 px-2 py-1 rounded-full backdrop-blur-md">
+              <button
+                type="button"
+                onClick={(e) => onManualPhase(e, 'before')}
+                aria-label={`Show ${thumb.title} Before thumbnail`}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  isBefore ? 'w-4 bg-white' : 'w-1.5 bg-neutral-500 hover:bg-neutral-300'
+                }`}
+              />
+              <button
+                type="button"
+                onClick={(e) => onManualPhase(e, 'after')}
+                aria-label={`Show ${thumb.title} After redesign thumbnail`}
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                  !isBefore
+                    ? 'w-4 bg-blue-500 shadow-[0_0_8px_#2563eb]'
+                    : 'w-1.5 bg-neutral-500 hover:bg-neutral-300'
+                }`}
+              />
+            </div>
+          </>
+        ) : (
+          <img
+            src={thumb.imageUrl}
+            alt={thumb.title}
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              const parent = e.currentTarget.parentElement;
+              if (parent) {
+                const fallback = parent.querySelector('.thumb-fallback') as HTMLElement;
+                if (fallback) fallback.style.display = 'flex';
+              }
+            }}
+          />
+        )}
+
+        {/* Resilient fallback if image fails */}
+        <div className="thumb-fallback hidden absolute inset-0 bg-neutral-950 flex-col items-center justify-center p-4 text-center">
+          <Layers className="w-8 h-8 text-blue-400 mb-2" />
+          <span className="text-xs text-neutral-400">{thumb.categoryLabel}</span>
+        </div>
+
+        {/* Subtle deep blue glow overlay on hover */}
+        <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10" />
+      </div>
+    </div>
+  );
+};
+
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   thumbnails,
   onSelectThumbnail,
 }) => {
   const [activeCategory, setActiveCategory] = useState<ThumbnailCategory>('todos');
+  // Unified synchronized 3-second loop across all 6 cards, always starting on 'before'
+  const [carouselPhase, setCarouselPhase] = useState<'before' | 'after'>('before');
+  const [manualTick, setManualTick] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCarouselPhase((prev) => (prev === 'before' ? 'after' : 'before'));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [manualTick]);
+
+  const handleManualPhase = (e: React.MouseEvent, phase: 'before' | 'after') => {
+    e.stopPropagation();
+    setCarouselPhase(phase);
+    setManualTick((t) => t + 1);
+  };
 
   const filtered = filterThumbnails(thumbnails, activeCategory);
 
@@ -39,11 +167,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 border-b border-neutral-800/80 pb-6">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-1">
-              Work Gallery · Real Cases
+              Portfolio Catalog · Custom Concepts
             </span>
             <h2 className="font-['Big_Shoulders_Display'] text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white">
-              RECAP PROJECT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600 drop-shadow-[0_0_25px_rgba(37,99,235,0.65)]">2026</span>
+              THUMBNAIL <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600 drop-shadow-[0_0_25px_rgba(37,99,235,0.65)]">REDESIGNS</span>
             </h2>
+            <p className="text-xs sm:text-sm text-neutral-400 mt-2 max-w-2xl">
+              Explore the thumbnail redesigns I created across multiple YouTube niches to demonstrate the visual quality and click appeal I can deliver for your channel. Click any image to zoom in.
+            </p>
           </div>
         </div>
 
@@ -67,42 +198,16 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           })}
         </div>
 
-        {/* Projects Grid: ONLY PHOTOS, NO TITLE, NO DESCRIPTION */}
+        {/* Projects Grid: Synchronized 3s Before/After Carousels across all 6 cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {filtered.map((thumb) => (
-            <div
+            <ThumbnailCard
               key={thumb.id}
-              onClick={() => onSelectThumbnail(thumb)}
-              className="group relative rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500 overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] cursor-pointer"
-              title="Click to open in fullscreen zoom"
-            >
-              {/* Thumbnail 16:9 Container - Strictly the photo */}
-              <div className="relative aspect-video w-full overflow-hidden bg-black">
-                <img
-                  src={thumb.imageUrl}
-                  alt={thumb.title}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const parent = e.currentTarget.parentElement;
-                    if (parent) {
-                      const fallback = parent.querySelector('.thumb-fallback') as HTMLElement;
-                      if (fallback) fallback.style.display = 'flex';
-                    }
-                  }}
-                />
-
-                {/* Resilient fallback if image fails */}
-                <div className="thumb-fallback hidden absolute inset-0 bg-neutral-950 flex-col items-center justify-center p-4 text-center">
-                  <Layers className="w-8 h-8 text-blue-400 mb-2" />
-                  <span className="text-xs text-neutral-400">{thumb.categoryLabel}</span>
-                </div>
-
-                {/* Subtle deep blue glow overlay on hover */}
-                <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              </div>
-            </div>
+              thumb={thumb}
+              carouselPhase={carouselPhase}
+              onManualPhase={handleManualPhase}
+              onSelect={onSelectThumbnail}
+            />
           ))}
         </div>
 

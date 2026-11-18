@@ -64,7 +64,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                 
                 <div className="absolute bottom-3 inset-x-3 text-center">
                   <span className="text-[11px] font-mono text-blue-300 bg-neutral-900/90 px-2.5 py-1 rounded-md border border-blue-500/50 backdrop-blur-sm shadow-[0_0_10px_rgba(37,99,235,0.3)]">
-                    2+ Years Delivering Viral Thumbnails
+                    Thumbnail Designer · Open for Opportunity
                   </span>
                 </div>
               </div>
@@ -143,17 +143,17 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
               </div>
             </div>
 
-            {/* Experience & Education columns */}
+            {/* Commitment & Methodology columns */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               <div className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-blue-500/40 transition-colors">
                 <h4 className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">
-                  HANDS-ON EXPERIENCE
+                  MY COMMITMENT TO YOU
                 </h4>
                 <div className="space-y-2 text-xs text-neutral-300">
-                  <p className="font-semibold text-white">2+ Years Dedicated to Gaming</p>
+                  <p className="font-semibold text-white">One Opportunity to Prove My Value</p>
                   <p className="text-neutral-400 leading-relaxed">
-                    Continuously helping YouTube creators break record view counts with psychology-driven thumbnails.
+                    I am straightforward and eager to work: give me one shot and I will deliver a standout thumbnail within 24 hours with full 24/7 support.
                   </p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
                 <div className="space-y-2 text-xs text-neutral-300">
                   <p className="font-semibold text-white">Retention-First Design</p>
                   <p className="text-neutral-400 leading-relaxed">
-                    Every light beam, smoke particle, and facial expression has one purpose: hook the player’s eye before they scroll.
+                    Every light beam, facial expression, and contrast shift has one purpose: hook the viewer’s eye before they scroll past.
                   </p>
                 </div>
               </div>

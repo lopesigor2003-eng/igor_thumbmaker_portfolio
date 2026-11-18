@@ -124,7 +124,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <span className="text-blue-400 font-bold drop-shadow-[0_0_8px_rgba(37,99,235,0.8)]">✓</span> Mobile-First Optimization
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="text-blue-400 font-bold drop-shadow-[0_0_8px_rgba(37,99,235,0.8)]">✓</span> Proven A/B Testing
+                <span className="text-blue-400 font-bold drop-shadow-[0_0_8px_rgba(37,99,235,0.8)]">✓</span> High-Contrast Redesigns
               </span>
             </div>
 
@@ -132,21 +132,36 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       </div>
 
-      {/* KPI Stats Strip below the hero split */}
+      {/* Sincere Commitment Strip below the hero split */}
       <div className="max-w-7xl mx-auto w-full mt-12 pt-8 border-t border-neutral-800/60">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {HIGHLIGHT_STATS.map((stat, idx) => (
             <div
               key={idx}
-              className="p-4 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-blue-500/50 backdrop-blur-sm transition-all hover:shadow-[0_0_25px_rgba(37,99,235,0.22)] group"
+              onClick={stat.targetSection ? () => onNavigate(stat.targetSection!) : undefined}
+              role={stat.targetSection ? 'button' : undefined}
+              tabIndex={stat.targetSection ? 0 : undefined}
+              onKeyDown={
+                stat.targetSection
+                  ? (e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        onNavigate(stat.targetSection!);
+                      }
+                    }
+                  : undefined
+              }
+              className={`p-5 rounded-xl bg-neutral-900/50 border border-neutral-800 hover:border-blue-500/50 backdrop-blur-sm transition-all hover:shadow-[0_0_25px_rgba(37,99,235,0.22)] group ${
+                stat.targetSection ? 'cursor-pointer' : ''
+              }`}
             >
-              <div className="font-['Big_Shoulders_Display'] text-3xl sm:text-4xl font-black text-white group-hover:text-blue-300 tracking-tight transition-colors drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+              <div className="font-['Big_Shoulders_Display'] text-2xl sm:text-3xl font-black text-white group-hover:text-blue-300 tracking-wide transition-colors drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                 {stat.value}
               </div>
               <div className="text-xs font-semibold uppercase tracking-wider text-blue-400 mt-1">
                 {stat.label}
               </div>
-              <div className="text-[11px] text-neutral-400 mt-0.5 leading-tight">
+              <div className="text-xs text-neutral-400 mt-1.5 leading-relaxed">
                 {stat.description}
               </div>
             </div>
