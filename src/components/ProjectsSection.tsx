@@ -11,7 +11,7 @@ interface ProjectsSectionProps {
 }
 
 const CATEGORY_TABS: { id: ThumbnailCategory; label: string }[] = [
-  { id: 'todos', label: 'All Projects (6)' },
+  { id: 'todos', label: 'All Projects (7)' },
   { id: 'gta5', label: 'GTA 5' },
   { id: 'gta6', label: 'GTA 6' },
   { id: 'roblox', label: 'Roblox' },
@@ -136,7 +136,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
   onSelectThumbnail,
 }) => {
   const [activeCategory, setActiveCategory] = useState<ThumbnailCategory>('todos');
-  // Unified synchronized 3-second loop across all 6 cards, always starting on 'before'
+  // Unified synchronized 3-second loop across all 7 cards, always starting on 'before'
   const [carouselPhase, setCarouselPhase] = useState<'before' | 'after'>('before');
   const [manualTick, setManualTick] = useState(0);
 
@@ -198,7 +198,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({
           })}
         </div>
 
-        {/* Projects Grid: Synchronized 3s Before/After Carousels across all 6 cards */}
+        {/* Projects Grid: Synchronized 3s Before/After Carousels across all 7 cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {filtered.map((thumb) => (
             <ThumbnailCard
