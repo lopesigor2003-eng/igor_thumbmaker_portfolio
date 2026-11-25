@@ -18,20 +18,21 @@ export const FeedSimulatorModal: React.FC<FeedSimulatorModalProps> = ({
   selectedThumbnail,
 }) => {
   const [device, setDevice] = useState<DeviceMode>('mobile');
-  const [currentThumb, setCurrentThumb] = useState<ThumbnailProject>(
-    selectedThumbnail || thumbnails[0]
+  const [currentThumb, setCurrentThumb] = useState<ThumbnailProject | null>(
+    selectedThumbnail || thumbnails[0] || null
   );
-  const [customTitle, setCustomTitle] = useState(currentThumb.title);
+  const [customTitle, setCustomTitle] = useState(currentThumb?.title || '');
 
-  // Update if selected prop changes
+  // Update if selected prop or thumbnails list changes
   React.useEffect(() => {
-    if (selectedThumbnail) {
-      setCurrentThumb(selectedThumbnail);
-      setCustomTitle(selectedThumbnail.title);
+    const nextThumb = selectedThumbnail || thumbnails[0] || null;
+    if (nextThumb) {
+      setCurrentThumb(nextThumb);
+      setCustomTitle(nextThumb.title);
     }
-  }, [selectedThumbnail]);
+  }, [selectedThumbnail, thumbnails]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !currentThumb) return null;
 
   return (
     <div

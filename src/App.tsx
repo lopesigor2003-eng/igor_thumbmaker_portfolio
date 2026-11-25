@@ -50,7 +50,7 @@ export default function App() {
             (initThumb, idx) =>
               parsed[idx]?.id !== initThumb.id ||
               parsed[idx]?.imageUrl !== initThumb.imageUrl ||
-              parsed[idx]?.beforeImageUrl !== initThumb.beforeImageUrl
+              parsed[idx]?.category !== initThumb.category
           )
         ) {
           localStorage.setItem('igor_portfolio_thumbnails', JSON.stringify(INITIAL_THUMBNAILS));
@@ -67,7 +67,6 @@ export default function App() {
   const [activeSection, setActiveSection] = useState<string>('hero');
   const [isFeedSimulatorOpen, setIsFeedSimulatorOpen] = useState(false);
   const [selectedThumbForDetail, setSelectedThumbForDetail] = useState<ThumbnailProject | null>(null);
-  const [initialModalViewMode, setInitialModalViewMode] = useState<'before' | 'after'>('before');
   const [selectedThumbForSimulator, setSelectedThumbForSimulator] = useState<ThumbnailProject | null>(null);
 
   // Scroll listener to update active section in navbar
@@ -150,10 +149,7 @@ export default function App() {
         {/* Slide 3: Recap Projects & Thumbnail Gallery */}
         <ProjectsSection
           thumbnails={thumbnails}
-          onSelectThumbnail={(thumb, viewMode) => {
-            setInitialModalViewMode(viewMode || 'before');
-            setSelectedThumbForDetail(thumb);
-          }}
+          onSelectThumbnail={(thumb) => setSelectedThumbForDetail(thumb)}
           onSimulateThumbnail={(thumb) => handleOpenFeedSimulator(thumb)}
         />
 
@@ -175,12 +171,8 @@ export default function App() {
       <ThumbnailDetailModal
         thumbnail={selectedThumbForDetail}
         thumbnails={thumbnails}
-        initialViewMode={initialModalViewMode}
         onClose={() => setSelectedThumbForDetail(null)}
-        onSelectThumbnail={(thumb) => {
-          setInitialModalViewMode('before');
-          setSelectedThumbForDetail(thumb);
-        }}
+        onSelectThumbnail={(thumb) => setSelectedThumbForDetail(thumb)}
         onOpenFeedSimulator={(thumb) => handleOpenFeedSimulator(thumb)}
       />
 

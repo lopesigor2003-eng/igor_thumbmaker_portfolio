@@ -124,7 +124,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 <span className="text-blue-400 font-bold drop-shadow-[0_0_8px_rgba(37,99,235,0.8)]">✓</span> Mobile-First Optimization
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="text-blue-400 font-bold drop-shadow-[0_0_8px_rgba(37,99,235,0.8)]">✓</span> High-Contrast Redesigns
+                <span className="text-blue-400 font-bold drop-shadow-[0_0_8px_rgba(37,99,235,0.8)]">✓</span> GTA 6 & Travel Vlogs Focus
               </span>
             </div>
 

@@ -19,14 +19,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
         <div className="text-center md:text-left mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-neutral-800/80 pb-6">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-blue-400 block mb-1">
-              Professional Profile · High-CTR Multi-Niche Specialist
+              Professional Profile · GTA 6 & Travel Vlogs Specialist
             </span>
             <h2 className="font-['Big_Shoulders_Display'] text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white">
               ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-600 drop-shadow-[0_0_25px_rgba(37,99,235,0.65)]">ME</span>
             </h2>
           </div>
           <div className="text-sm text-neutral-400 max-w-md">
-            Specialized in creating high-impact thumbnails that command the feed across YouTube’s biggest niches: GTA, Roblox, Horror, Travel, and Vlogs.
+            Specialized in crafting high-impact YouTube thumbnails built to dominate feeds in two focused niches: GTA 6 and Travel Vlogs.
           </div>
         </div>
 
@@ -103,42 +103,26 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ profile }) => {
               </p>
             </div>
 
-            {/* Niches Focus Card (6 niches: GTA 5, GTA 6, Roblox, Terror, Viagem, Vlogs) */}
+            {/* Niches Focus Card (Focused on GTA 6 & Travel Vlogs) */}
             <div className="p-6 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-blue-500/50 transition-all hover:shadow-[0_0_25px_rgba(37,99,235,0.2)]">
               <div className="flex items-center gap-2 mb-3">
                 <Sparkles className="w-5 h-5 text-blue-400" />
                 <h3 className="font-['Big_Shoulders_Display'] text-2xl font-extrabold uppercase tracking-wide text-white">
-                  CORE NICHES & PSYCHOLOGICAL STRATEGIES
+                  CORE NICHES & VISUAL STRATEGY
                 </h3>
               </div>
               <p className="text-xs text-neutral-300 leading-relaxed">
-                Each genre requires dedicated psychological triggers: cinematic speed and chase tension in GTA, vibrant saturation in Roblox, spine-chilling suspense in Terror, aspirational grandeur in Viagem, and raw emotional resonance in Vlogs.
+                By focusing exclusively on GTA 6 and Travel Vlogs, every thumbnail is built around the exact visual triggers each audience clicks for—cinematic Vice City action and hype for GTA 6, and authentic emotion, vivid destinations, and story intrigue for Travel Vlogs.
               </p>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4 pt-4 border-t border-neutral-800/80 text-center">
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">GTA 5</span>
-                  <span className="text-[10px] text-neutral-400">Chases & Roleplay</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 pt-4 border-t border-neutral-800/80 text-center">
+                <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
+                  <span className="font-bold text-sm text-white group-hover:text-blue-300 block">GTA 6</span>
+                  <span className="text-[11px] text-neutral-400">Vice City, Action & Hype</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">GTA 6</span>
-                  <span className="text-[10px] text-neutral-400">Vice City & Hype</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">ROBLOX</span>
-                  <span className="text-[10px] text-neutral-400">Obby & Challenges</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">TERROR / HORROR</span>
-                  <span className="text-[10px] text-neutral-400">Suspense & Mystery</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">VIAGEM / TRAVEL</span>
-                  <span className="text-[10px] text-neutral-400">Cinematic Wonders</span>
-                </div>
-                <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
-                  <span className="font-bold text-xs text-white group-hover:text-blue-300 block">VLOGS / LIFESTYLE</span>
-                  <span className="text-[10px] text-neutral-400">Emotion & Hooks</span>
+                <div className="p-3.5 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-blue-500/60 transition-all group">
+                  <span className="font-bold text-sm text-white group-hover:text-blue-300 block">TRAVEL VLOGS</span>
+                  <span className="text-[11px] text-neutral-400">Destinations, Emotion & Storytelling</span>
                 </div>
               </div>
             </div>

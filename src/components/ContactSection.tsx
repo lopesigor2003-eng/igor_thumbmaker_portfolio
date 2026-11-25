@@ -19,7 +19,7 @@ interface ContactSectionProps {
 export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
   const [clientName, setClientName] = useState('');
   const [channelLink, setChannelLink] = useState('');
-  const [channelNiche, setChannelNiche] = useState('Gaming & Challenges');
+  const [channelNiche, setChannelNiche] = useState('GTA 6');
   const [projectType, setProjectType] = useState('Thumbnails for Upcoming Videos');
   const [messageText, setMessageText] = useState('');
   const [copiedDiscord, setCopiedDiscord] = useState(false);
@@ -239,13 +239,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ profile }) => {
                       onChange={(e) => setChannelNiche(e.target.value)}
                       className="w-full px-4 py-2.5 rounded-xl bg-black border border-neutral-800 focus:border-blue-500 focus:outline-none text-xs text-white transition-all"
                     >
-                      <option value="GTA 5 / GTA 6">GTA 5 / GTA 6</option>
-                      <option value="Roblox">Roblox</option>
-                      <option value="Terror / Horror">Terror / Horror</option>
-                      <option value="Viagem / Travel">Viagem / Travel</option>
-                      <option value="Vlogs / Lifestyle">Vlogs / Lifestyle</option>
-                      <option value="Gaming & Challenges">Gaming & Challenges</option>
-                      <option value="Other High-CTR Niche">Other High-CTR Niche</option>
+                      <option value="GTA 6">GTA 6</option>
+                      <option value="Travel Vlogs">Travel Vlogs</option>
+                      <option value="Other YouTube Niche">Other YouTube Niche</option>
                     </select>
                   </div>
 

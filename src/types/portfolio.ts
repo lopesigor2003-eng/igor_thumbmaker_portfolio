@@ -1,11 +1,7 @@
-export type ThumbnailCategory = 
+export type ThumbnailCategory =
   | 'todos'
-  | 'gta5'
   | 'gta6'
-  | 'roblox'
-  | 'terror'
-  | 'viagem'
-  | 'vlogs';
+  | 'travel-vlogs';
 
 export interface ThumbnailProject {
   id: string;
@@ -13,7 +9,6 @@ export interface ThumbnailProject {
   category: ThumbnailCategory;
   categoryLabel: string;
   imageUrl: string;
-  beforeImageUrl?: string;
   ctr: string;
   views: string;
   client: string;
